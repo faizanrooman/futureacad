@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — FutureAcad</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+</head>
+<body>
+  <canvas id="world"></canvas>
+  <div class="login">
+    <form class="login__card" method="post" action="{{ url_for('admin.login') }}">
+      <img src="{{ url_for('static', filename='img/logo-mark.png') }}" alt="FutureAcad" />
+      <h1>Admin sign in</h1>
+      {% with msgs = get_flashed_messages() %}
+        {% if msgs %}<div class="flash">{{ msgs[0] }}</div>{% endif %}
+      {% endwith %}
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" autocomplete="username" autofocus required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required />
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="{{ url_for('static', filename='js/world.js') }}"></script>
+</body>
+</html>

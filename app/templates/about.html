@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}About — FutureAcad{% endblock %}
+{% block description %}FutureAcad is a Deep Tech Initiative by Rooman — building Artificial Intelligence, enterprise software, and global talent networks from Dubai.{% endblock %}
+
+{% block content %}
+<header class="page">
+  <div class="page__kicker reveal-up">WHO WE ARE</div>
+  <h1 class="page__title reveal-up">A deep tech company,<br>not a vendor.</h1>
+  <p class="page__lede reveal-up">FutureAcad is a Deep Tech Initiative by Rooman. We pair frontier Artificial Intelligence with enterprise-grade engineering and a global talent network — turning ambition into systems that run in production.</p>
+</header>
+
+<section class="stats">
+  <div class="stat reveal-up"><span class="stat__n">25+</span><span class="stat__l">Years of Rooman heritage</span></div>
+  <div class="stat reveal-up"><span class="stat__n">7</span><span class="stat__l">Live platforms shipped</span></div>
+  <div class="stat reveal-up"><span class="stat__n">3</span><span class="stat__l">Continents served</span></div>
+  <div class="stat reveal-up"><span class="stat__n">∞</span><span class="stat__l">Problems worth solving</span></div>
+</section>
+
+<section class="split">
+  <div class="reveal-up">
+    <h3>Built on a quarter-century of trust.</h3>
+  </div>
+  <div class="reveal-up">
+    <p>Rooman has spent over two decades training engineers, building enterprise software, and connecting talent to opportunity. FutureAcad is what comes next — that experience, aimed squarely at Artificial Intelligence.</p>
+    <p>We don't sell slideware. Every idea here is pressure-tested against the same question: would we ship it to production ourselves?</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section__title reveal-up">What we believe.</h2>
+  <p class="section__sub reveal-up">Three convictions shape everything we build.</p>
+  <div class="pillars">
+    <article class="pillar reveal-up" data-tilt><span class="pillar__no">01</span><h3 class="pillar__h">Intelligence is infrastructure.</h3><p class="pillar__p">AI isn't a feature you bolt on. It's a layer your whole business should run on — governed, observable, and owned by you.</p></article>
+    <article class="pillar reveal-up" data-tilt><span class="pillar__no">02</span><h3 class="pillar__h">Talent has no borders.</h3><p class="pillar__p">The best engineer for your problem may be three time zones away. We make distance irrelevant and quality non-negotiable.</p></article>
+    <article class="pillar reveal-up" data-tilt><span class="pillar__no">03</span><h3 class="pillar__h">Ship, then prove.</h3><p class="pillar__p">Outcomes over opinions. We measure in uptime, hours saved, and revenue moved — not in promises.</p></article>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2 class="reveal-up">Let's build tomorrow.</h2>
+  <a href="{{ url_for('main.contact') }}" class="btn" data-magnetic><span>Schedule Strategy Session</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</section>
+{% endblock %}

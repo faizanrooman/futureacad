@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Contact — FutureAcad{% endblock %}
+{% block description %}Schedule a strategy session with FutureAcad. Tell us about your AI, enterprise software, or global talent challenge.{% endblock %}
+
+{% block content %}
+<header class="page" style="padding-bottom:4vh">
+  <div class="page__kicker reveal-up">LET'S TALK</div>
+  <h1 class="page__title reveal-up">Schedule a<br>strategy session.</h1>
+</header>
+
+<section class="contact">
+  <aside class="contact__aside reveal-up">
+    <h2>Tell us what you're trying to build.</h2>
+    <p>Whether it's AI in production, an enterprise platform, or a team to ship it — we'll come prepared with ideas, not a sales script.</p>
+    <div class="contact__meta">
+      <span>EMAIL · <a href="mailto:hello@futureacad.ae">hello@futureacad.ae</a></span>
+      <span>BASED IN · Dubai, United Arab Emirates</span>
+      <span>A DEEP TECH INITIATIVE BY ROOMAN</span>
+    </div>
+  </aside>
+
+  <form class="form reveal-up" id="contactForm" data-csrf="{{ csrf_token }}" novalidate>
+    <div class="field--row">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required />
+      </div>
+    </div>
+    <div class="field--row">
+      <div class="field">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" autocomplete="organization" />
+      </div>
+      <div class="field">
+        <label for="interest">I'm interested in</label>
+        <select id="interest" name="interest">
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+          <option value="Enterprise Software">Enterprise Software</option>
+          <option value="Global Talent & Staffing">Global Talent &amp; Staffing</option>
+          <option value="Something else">Something else</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="What are you building, and where are you stuck?" required></textarea>
+    </div>
+    <!-- Honeypot: hidden from humans, catches bots -->
+    <div class="hp" aria-hidden="true"><label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label></div>
+    <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
+    <button type="submit" class="btn" data-magnetic><span>Send message</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}

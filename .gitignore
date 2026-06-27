@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Env & secrets
+.env
+
+# Database
+instance/
+*.db
+*.db-wal
+*.db-shm
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build artefacts / reference
+app/static/js/_main_reference.js

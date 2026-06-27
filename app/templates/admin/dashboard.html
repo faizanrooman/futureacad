@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Leads — FutureAcad Admin</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <img src="{{ url_for('static', filename='img/logo-mark.png') }}" alt="FutureAcad" />
+      <div class="top__actions">
+        <span class="muted">Signed in as {{ user }}</span>
+        <a class="btn btn--sm" href="{{ url_for('admin.export') }}">Export CSV</a>
+        <a class="btn btn--sm" href="{{ url_for('admin.logout') }}" style="background:none;border:1px solid var(--line);color:var(--pearl)">Sign out</a>
+      </div>
+    </div>
+    <p class="muted">Strategy-session enquiries from the contact form.</p>
+
+    <div class="cards">
+      <div class="card"><b>{{ stats.total }}</b><span>Total leads</span></div>
+      <div class="card"><b>{{ stats.today }}</b><span>Today</span></div>
+      <div class="card"><b>{{ stats.week }}</b><span>Last 7 days</span></div>
+      <div class="card"><b>{{ stats.top or '—' }}</b><span>Top interest</span></div>
+    </div>
+
+    <div class="tablewrap">
+      {% if leads %}
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th>When</th><th>Name</th><th>Email</th><th>Company</th><th>Interest</th><th>Message</th></tr>
+          </thead>
+          <tbody>
+            {% for l in leads %}
+            <tr>
+              <td class="when">{{ l.created_at }}</td>
+              <td>{{ l.name }}</td>
+              <td><a href="mailto:{{ l.email }}">{{ l.email }}</a></td>
+              <td>{{ l.company or '—' }}</td>
+              <td><span class="tag">{{ l.interest or '—' }}</span></td>
+              <td class="msg">{{ l.message }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="empty">No leads yet. Submissions from the contact form will appear here.</div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

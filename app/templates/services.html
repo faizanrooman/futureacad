@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Services — FutureAcad{% endblock %}
+{% block description %}FutureAcad services: Artificial Intelligence, Enterprise Software Engineering, and Global Talent & Staffing — from Dubai, worldwide.{% endblock %}
+
+{% block content %}
+<header class="page">
+  <div class="page__kicker reveal-up">WHAT WE DO</div>
+  <h1 class="page__title reveal-up">Three disciplines,<br>one outcome.</h1>
+  <p class="page__lede reveal-up">Artificial Intelligence, enterprise engineering, and global talent — delivered as one capability so your business moves faster than the future.</p>
+</header>
+
+<section class="section">
+  <div class="pillars">
+    <article class="pillar reveal-up" data-tilt>
+      <span class="pillar__no">01 — AI</span>
+      <h3 class="pillar__h">Artificial Intelligence</h3>
+      <p class="pillar__p">Autonomous agents, fine-tuned LLMs, computer vision, and intelligent automation — designed, governed, and deployed into your real workflows.</p>
+    </article>
+    <article class="pillar reveal-up" data-tilt>
+      <span class="pillar__no">02 — ENGINEERING</span>
+      <h3 class="pillar__h">Enterprise Software</h3>
+      <p class="pillar__p">CRMs, ERPs, platforms, and APIs built for scale and uptime. Microservices that communicate, infrastructure that holds, software you can feel.</p>
+    </article>
+    <article class="pillar reveal-up" data-tilt>
+      <span class="pillar__no">03 — TALENT</span>
+      <h3 class="pillar__h">Global Talent &amp; Staffing</h3>
+      <p class="pillar__p">Vetted engineers and AI specialists, matched to your mission. Scale a team up in weeks, across borders, without the overhead.</p>
+    </article>
+  </div>
+</section>
+
+<section class="split">
+  <div class="reveal-up"><h3>AI that earns its place in production.</h3></div>
+  <div class="reveal-up"><p>We start where the value is — a process that's slow, a decision that's manual, a backlog that never clears. Then we engineer intelligence around it: data grounded, access controlled, results measured. No demos that die in a sandbox.</p></div>
+</section>
+
+<section class="split">
+  <div class="reveal-up"><h3>Engineering that survives contact with reality.</h3></div>
+  <div class="reveal-up"><p>Our platforms run every day for real users — see the eight live products in our work. We bring that same discipline to yours: observable systems, clean APIs, and architecture that scales without drama.</p></div>
+</section>
+
+<section class="split">
+  <div class="reveal-up"><h3>Talent, on demand, without borders.</h3></div>
+  <div class="reveal-up"><p>Two decades of training and placing engineers means we know how to find signal fast. You get people who ship — embedded in your team or running a build end-to-end.</p></div>
+</section>
+
+<section class="cta-band">
+  <h2 class="reveal-up">Tell us what you're building.</h2>
+  <a href="{{ url_for('main.contact') }}" class="btn" data-magnetic><span>Start a conversation</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</section>
+{% endblock %}

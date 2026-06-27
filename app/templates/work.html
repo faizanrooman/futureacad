@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Work — FutureAcad{% endblock %}
+{% block description %}Platforms built by FutureAcad & Rooman — CRM, ERP, Startup Varsity, AI Tutor, BlueLinked, Omnis and more. Products in production.{% endblock %}
+
+{% block content %}
+<header class="page">
+  <div class="page__kicker reveal-up">SELECTED WORK</div>
+  <h1 class="page__title reveal-up">Platforms<br>already live.</h1>
+  <p class="page__lede reveal-up">Not concepts — products in production, used every day. A working ecosystem spanning enterprise software, education, and AI. Each one is a live link.</p>
+</header>
+
+<section class="section">
+  <div class="eco" id="eco">
+    {% for p in projects %}
+    <a class="eco__row" href="{{ p.url }}" target="_blank" rel="noopener">
+      <span class="eco__num">{{ '%02d' % loop.index }}</span><span class="eco__name">{{ p.name }}</span>
+      <span class="eco__desc">{{ p.desc }}</span><span class="eco__host">{{ p.host }}</span><span class="eco__arrow"></span></a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat reveal-up"><span class="stat__n">+38%</span><span class="stat__l">Retail revenue uplift · UAE</span></div>
+  <div class="stat reveal-up"><span class="stat__n">−61%</span><span class="stat__l">Manual hours · KSA logistics</span></div>
+  <div class="stat reveal-up"><span class="stat__n">4.2M</span><span class="stat__l">Daily LLM decisions · EU fintech</span></div>
+</section>
+
+<section class="cta-band">
+  <h2 class="reveal-up">Your platform could be next.</h2>
+  <a href="{{ url_for('main.contact') }}" class="btn" data-magnetic><span>Schedule Strategy Session</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Reveal eco rows on the Work page (home.js doesn't run here).
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.from('.eco__row', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', stagger: 0.06,
+      scrollTrigger: { trigger: '#eco', start: 'top 82%' } });
+  }
+</script>
+{% endblock %}

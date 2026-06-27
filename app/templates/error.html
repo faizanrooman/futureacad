@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ code }} — FutureAcad{% endblock %}
+{% block content %}
+<header class="page" style="min-height:80vh;display:flex;flex-direction:column;justify-content:center">
+  <div class="page__kicker">{{ code }}</div>
+  <h1 class="page__title">{{ heading }}</h1>
+  <p class="page__lede">{{ message }}</p>
+  <p style="margin-top:36px"><a href="{{ url_for('main.home') }}" class="btn" data-magnetic><span>Back to home</span></a></p>
+</header>
+{% endblock %}
+{% block footer %}{% endblock %}

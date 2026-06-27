@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block body_class %}is-home{% endblock %}
+
+{% block preloader %}
+<div class="preloader" id="preloader">
+  <img class="preloader__logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="FutureAcad" />
+  <div class="preloader__ar ar" lang="ar">أهلاً وسهلاً</div>
+  <div class="preloader__bar"><span id="preBar"></span></div>
+  <div class="preloader__label">INITIALIZING INTELLIGENCE</div>
+</div>
+{% endblock %}
+
+{% block content %}
+  <!-- SCENE 1 — Genesis -->
+  <section class="scene scene--1" id="scene1">
+    <div class="scene1__stage">
+      <div class="kicker reveal-up">THE FUTURE DOESN'T WAIT</div>
+      <div class="kicker-ar reveal-up" lang="ar">المستقبل لا ينتظر</div>
+      <h1 class="title-xl">
+        <span class="line" data-line>Future <em>isn't</em></span>
+        <span class="line" data-line>waiting.</span>
+      </h1>
+      <h1 class="title-xl title-morph" aria-hidden="true">
+        <span class="line" data-line>It's already</span>
+        <span class="line" data-line>being <strong class="word-built">built</strong>.</span>
+      </h1>
+    </div>
+    <div class="scroll-hint" id="scrollHint"><span>SCROLL TO TRAVEL</span><i></i></div>
+  </section>
+
+  <!-- SCENE 2 — The AI Universe -->
+  <section class="scene scene--2" id="scene2">
+    <div class="scene__bg bg--intelligence"></div>
+    <div class="scene__index">01 / INTELLIGENCE</div>
+    <div class="scene__lead">
+      <div class="scene2__copy">
+        <h2 class="title-lg reveal-up">A mind, not<br>a machine.</h2>
+        <p class="scene__ar reveal-up" lang="ar">عقلٌ لا آلة</p>
+        <p class="lede reveal-up">Move through a living neural intelligence. Agents, language models, vision, and automation — orchestrated as one enterprise brain.</p>
+      </div>
+      <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-2.jpg') }}" alt="An AI capability map — strategy, machine learning, vision, automation" loading="lazy" /></div>
+    </div>
+    <div class="holo-grid" id="holoGrid">
+      <article class="holo" data-tilt><span class="holo__tag">AGENTS</span><span class="holo__val">Autonomous</span><span class="holo__sub">Goal-driven workflows that act, not wait.</span></article>
+      <article class="holo" data-tilt><span class="holo__tag">LLMs</span><span class="holo__val">Reasoning</span><span class="holo__sub">Fine-tuned models grounded in your data.</span></article>
+      <article class="holo" data-tilt><span class="holo__tag">VISION</span><span class="holo__val">Perception</span><span class="holo__sub">See, read, and understand the physical world.</span></article>
+      <article class="holo" data-tilt><span class="holo__tag">AUTOMATION</span><span class="holo__val">Velocity</span><span class="holo__sub">Replace the repetitive. Free the brilliant.</span></article>
+      <article class="holo" data-tilt><span class="holo__tag">ENTERPRISE AI</span><span class="holo__val">At Scale</span><span class="holo__sub">Secure, governed, and built for production.</span></article>
+      <article class="holo" data-tilt><span class="holo__tag">PROMPTING</span><span class="holo__val">Precision</span><span class="holo__sub">Engineering intent into reliable outcomes.</span></article>
+    </div>
+  </section>
+
+  <!-- SCENE 3 — Engineering the Future -->
+  <section class="scene scene--3" id="scene3">
+    <div class="scene__bg bg--enterprise"></div>
+    <div class="scene__index">02 / ENTERPRISE</div>
+    <div class="scene__lead">
+      <div class="scene3__copy">
+        <h2 class="title-lg reveal-up">We build the<br>city beneath<br>the software.</h2>
+        <p class="scene__ar reveal-up" lang="ar">نبني البنية التحتية الرقمية</p>
+        <p class="lede reveal-up">Every node becomes code. Every service becomes a tower. Roads of data, skylines of architecture — enterprise systems you can feel.</p>
+      </div>
+      <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-3.jpg') }}" alt="A live system architecture — cloud, data pipeline, microservices" loading="lazy" /></div>
+    </div>
+    <ul class="metrics" id="metrics3">
+      <li><span class="metrics__n" data-count="99.99" data-suffix="%">0</span><span class="metrics__l">Uptime engineered</span></li>
+      <li><span class="metrics__n" data-count="40" data-suffix="+">0</span><span class="metrics__l">Microservices orchestrated</span></li>
+      <li><span class="metrics__n" data-count="12" data-suffix="x">0</span><span class="metrics__l">Faster shipping cycles</span></li>
+    </ul>
+  </section>
+
+  <!-- SCENE 4 — Global Talent -->
+  <section class="scene scene--4" id="scene4">
+    <div class="scene__bg bg--talent"></div>
+    <div class="scene__index">03 / TALENT</div>
+    <div class="scene__lead">
+      <div class="scene4__copy">
+        <h2 class="title-lg reveal-up">Talent has<br>no borders.</h2>
+        <p class="scene__ar reveal-up" lang="ar">المواهب بلا حدود</p>
+        <p class="lede reveal-up">Developers light up in India. Clients rise in the UAE. Projects ignite across Europe. One living network, hiring at the speed of ambition.</p>
+        <div class="globe-legend">
+          <span><i class="dot dot--dev"></i>Developers</span>
+          <span><i class="dot dot--client"></i>Companies</span>
+          <span><i class="dot dot--route"></i>Live routes</span>
+        </div>
+      </div>
+      <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-1.jpg') }}" alt="A global AI strategy session in Dubai" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <!-- SCENE 5 — Proof -->
+  <section class="scene scene--5" id="scene5">
+    <div class="scene__bg bg--proof"></div>
+    <div class="scene__index">04 / PROOF</div>
+    <h2 class="title-lg reveal-up center">Outcomes, not promises.</h2>
+    <p class="scene__ar reveal-up" lang="ar">نتائج لا وعود</p>
+    <div class="portals" id="portals">
+      <article class="portal" data-tilt>
+        <header><span>RETAIL · UAE</span><b>+38%</b></header>
+        <div class="portal__body">
+          <div class="bar"><i style="--h:45%"></i><i style="--h:60%"></i><i style="--h:52%"></i><i style="--h:78%"></i><i style="--h:90%"></i></div>
+          <p>Revenue uplift after deploying autonomous demand forecasting.</p>
+        </div>
+      </article>
+      <article class="portal" data-tilt>
+        <header><span>LOGISTICS · KSA</span><b>−61%</b></header>
+        <div class="portal__body">
+          <div class="bar bar--down"><i style="--h:90%"></i><i style="--h:74%"></i><i style="--h:55%"></i><i style="--h:40%"></i><i style="--h:29%"></i></div>
+          <p>Manual processing hours eliminated through end-to-end automation.</p>
+        </div>
+      </article>
+      <article class="portal" data-tilt>
+        <header><span>FINTECH · EU</span><b>4.2M</b></header>
+        <div class="portal__body">
+          <div class="bar"><i style="--h:30%"></i><i style="--h:48%"></i><i style="--h:66%"></i><i style="--h:82%"></i><i style="--h:96%"></i></div>
+          <p>Daily decisions served by a governed enterprise LLM platform.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SCENE ECOSYSTEM — live platforms -->
+  <section class="scene scene--eco" id="scene-eco">
+    <div class="scene__bg bg--ecosystem"></div>
+    <div class="scene__index">05 / ECOSYSTEM</div>
+    <div class="scene__lead">
+      <div class="eco__copy">
+        <h2 class="title-lg reveal-up">Platforms<br>already live.</h2>
+        <p class="scene__ar reveal-up" lang="ar">منصّات تعمل الآن</p>
+        <p class="lede reveal-up">Not concepts — products in production, used every day. A working ecosystem spanning enterprise software, education, and AI.</p>
+      </div>
+      <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-4.jpg') }}" alt="A FutureAcad engineer building and training AI models" loading="lazy" /></div>
+    </div>
+    <div class="eco" id="eco">
+      {% for p in projects %}
+      <a class="eco__row" href="{{ p.url }}" target="_blank" rel="noopener">
+        <span class="eco__num">{{ '%02d' % loop.index }}</span><span class="eco__name">{{ p.name }}</span>
+        <span class="eco__desc">{{ p.desc }}</span><span class="eco__host">{{ p.host }}</span><span class="eco__arrow"></span></a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- SCENE 6 — The Future / Dubai -->
+  <section class="scene scene--6" id="scene6">
+    <div class="skyline" id="skyline"></div>
+    <div class="finale">
+      <img class="finale__logo reveal-up" src="{{ url_for('static', filename='img/logo.png') }}" alt="FutureAcad — A Deep Tech Initiative by Rooman" />
+      <h2 class="title-xl center reveal-up">Let's build<br>tomorrow.</h2>
+      <p class="finale__ar ar reveal-up" lang="ar">لِنَبْنِ الغد</p>
+      <a href="{{ url_for('main.contact') }}" class="cta" data-magnetic>
+        <span>Schedule Strategy Session</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="finale__foot">Dubai · United Arab Emirates — The Future Doesn't Wait.</div>
+      <div class="finale__foot finale__foot--ar ar" lang="ar">من دبي، إلى العالم</div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
