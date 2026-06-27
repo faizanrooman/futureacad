@@ -175,6 +175,10 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
   transform:scaleY(0);transform-origin:bottom;transition:transform .9s var(--ease)}
 .portal.in .bar i{transform:scaleY(1)}
 .bar--down i{background:linear-gradient(180deg,#ffd479,rgba(255,212,121,.12))}
+/* Chart bar heights (kept in CSS, not inline) */
+.bar--a i:nth-child(1){--h:45%}.bar--a i:nth-child(2){--h:60%}.bar--a i:nth-child(3){--h:52%}.bar--a i:nth-child(4){--h:78%}.bar--a i:nth-child(5){--h:90%}
+.bar--b i:nth-child(1){--h:90%}.bar--b i:nth-child(2){--h:74%}.bar--b i:nth-child(3){--h:55%}.bar--b i:nth-child(4){--h:40%}.bar--b i:nth-child(5){--h:29%}
+.bar--c i:nth-child(1){--h:30%}.bar--c i:nth-child(2){--h:48%}.bar--c i:nth-child(3){--h:66%}.bar--c i:nth-child(4){--h:82%}.bar--c i:nth-child(5){--h:96%}
 .portal__body p{font-size:13.5px;line-height:1.55;color:var(--pearl-dim)}
 
 /* ---------- Scene Ecosystem — live platform index ---------- */
