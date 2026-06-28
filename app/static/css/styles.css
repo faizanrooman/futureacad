@@ -98,7 +98,7 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
    snap to the same left/right edges across the whole journey. */
 .scene{position:relative;z-index:2;min-height:100vh;width:100%;max-width:1280px;margin-inline:auto;
   display:flex;flex-direction:column;justify-content:center;
-  padding:16vh clamp(22px,5vw,56px);will-change:transform}
+  padding:16vh clamp(22px,5vw,56px)}
 .scene__index{align-self:flex-start;margin-bottom:38px;font-family:var(--mono);font-size:12px;
   letter-spacing:.42em;color:var(--blue-bright);opacity:.7}
 .scene--5 .scene__index,.scene--6 .scene__index{align-self:center}
@@ -391,4 +391,21 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
 @media(max-width:860px){
   .scene__lead{grid-template-columns:1fr;gap:30px}
   .scene__media{max-width:620px;margin-top:6px}
+}
+
+/* ---------- Touch devices: kill scroll jank ----------
+   backdrop-filter:blur() over the fixed neural canvas forces the browser
+   to re-blur its backdrop every frame while scrolling — the classic mobile
+   "scrolls then suddenly stops" stutter. Drop the blur on touch and use
+   solid-ish fills so the glass surfaces still read as cards. */
+@media(hover:none){
+  .nav--scrolled{background:rgba(5,6,10,.92);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav__cta{background:rgba(20,26,42,.6);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav__links{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .holo{background:linear-gradient(160deg,rgba(28,34,52,.94),rgba(14,18,30,.94));
+    -webkit-backdrop-filter:none;backdrop-filter:none}
+  .portal{background:linear-gradient(165deg,rgba(26,32,50,.94),rgba(10,12,20,.96));
+    -webkit-backdrop-filter:none;backdrop-filter:none}
+  .pillar{background:linear-gradient(160deg,rgba(26,32,50,.92),rgba(12,15,26,.94));
+    -webkit-backdrop-filter:none;backdrop-filter:none}
 }
