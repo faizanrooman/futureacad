@@ -44,9 +44,12 @@
     }));
   }
 
-  /* ---- Lenis smooth scroll (skipped for reduced motion) ---- */
+  /* ---- Lenis smooth scroll (desktop only) ----
+     On touch devices we leave native scrolling alone — Lenis' RAF-driven
+     scroll fights iOS/Android momentum scrolling and makes the page feel
+     stuck. ScrollTrigger works off native scroll there. */
   let lenis = null;
-  if (!prefersReduced && window.Lenis) {
+  if (!prefersReduced && !isTouch && window.Lenis) {
     try { lenis = new Lenis({ duration: 1.2, smoothWheel: true, lerp: 0.085 }); }
     catch (e) { lenis = null; }
   }
