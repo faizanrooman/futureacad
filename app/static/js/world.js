@@ -21,7 +21,7 @@
     const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 400);
     camera.position.set(0, 0, 60);
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-    renderer.setSize(innerWidth, innerHeight);
+    renderer.setSize(innerWidth, innerHeight, false); // false = don't write inline px size; CSS 100% controls display (avoids 100vw scrollbar overflow)
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 
     const NODES = isTouch ? 260 : 520;
@@ -143,7 +143,7 @@
 
     addEventListener('resize', () => {
       camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
-      renderer.setSize(innerWidth, innerHeight);
+      renderer.setSize(innerWidth, innerHeight, false); // false = don't write inline px size; CSS 100% controls display (avoids 100vw scrollbar overflow)
     });
   } catch (err) {
     console.warn('[FutureAcad] WebGL world unavailable — continuing without it.', err);
