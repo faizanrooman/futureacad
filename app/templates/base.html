@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    /* Robust touch detection — set before the stylesheet applies so the
+       no-jank mobile rules (and Lenis skip) work even in webviews that
+       mis-report (hover). Drives html.is-touch in CSS + JS. */
+    try {
+      var t = matchMedia('(hover:none)').matches || matchMedia('(pointer:coarse)').matches
+        || 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      if (t) document.documentElement.classList.add('is-touch');
+    } catch (e) {}
+  </script>
   <title>{% block title %}FutureAcad — The Future Doesn't Wait.{% endblock %}</title>
   <meta name="description" content="{% block description %}FutureAcad.ae — Empowering businesses through Artificial Intelligence, Enterprise Technology, and Global Talent. A Deep Tech Initiative by Rooman, Dubai.{% endblock %}" />
   <meta name="robots" content="index, follow" />

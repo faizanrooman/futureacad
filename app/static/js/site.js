@@ -5,7 +5,10 @@
 (function () {
   'use strict';
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isTouch = window.matchMedia('(hover: none)').matches;
+  // Single source of truth: the <head> script tags html.is-touch using
+  // several signals (some webviews mis-report hover/pointer media queries).
+  const isTouch = document.documentElement.classList.contains('is-touch')
+    || window.matchMedia('(hover: none)').matches;
 
   /* ---- Magnetic buttons + 3D tilt (native cursor) ---- */
   if (!isTouch) {

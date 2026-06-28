@@ -5,7 +5,8 @@
    ============================================================ */
 (function () {
   'use strict';
-  const isTouch = window.matchMedia('(hover: none)').matches;
+  const isTouch = document.documentElement.classList.contains('is-touch')
+    || window.matchMedia('(hover: none)').matches;
 
   // Camera/colour state — mutated by page scripts. Always exists, even if
   // WebGL is unavailable, so timelines never crash.
@@ -22,7 +23,7 @@
     camera.position.set(0, 0, 60);
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
     renderer.setSize(innerWidth, innerHeight, false); // false = don't write inline px size; CSS 100% controls display (avoids 100vw scrollbar overflow)
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(devicePixelRatio, isTouch ? 1.5 : 2)); // lighter fill-rate on mobile GPUs
 
     const NODES = isTouch ? 260 : 520;
     const SPREAD = 130;
@@ -71,7 +72,7 @@
     const lines = new THREE.LineSegments(lineGeo, lineMat);
     scene.add(lines);
 
-    const dustN = 900;
+    const dustN = isTouch ? 350 : 900;
     const dustPos = new Float32Array(dustN * 3);
     for (let i = 0; i < dustN; i++) {
       dustPos[i*3] = (Math.random()-.5)*340;

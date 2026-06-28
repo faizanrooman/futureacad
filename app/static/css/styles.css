@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
     radial-gradient(100% 70% at 50% -12%,rgba(61,124,255,.12),transparent 55%),
     radial-gradient(70% 60% at 82% 112%,rgba(61,124,255,.06),transparent 60%),
     var(--obsidian)}
-#world{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;
+#world{position:fixed;inset:0;width:100%;height:100%;z-index:1;display:block;pointer-events:none;
   transition:opacity .25s linear;will-change:opacity}
 .vignette{position:fixed;inset:0;z-index:2;pointer-events:none;
   background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(2,3,7,.55) 80%,rgba(2,3,7,.92) 100%)}
@@ -396,16 +396,18 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
 /* ---------- Touch devices: kill scroll jank ----------
    backdrop-filter:blur() over the fixed neural canvas forces the browser
    to re-blur its backdrop every frame while scrolling — the classic mobile
-   "scrolls then suddenly stops" stutter. Drop the blur on touch and use
-   solid-ish fills so the glass surfaces still read as cards. */
-@media(hover:none){
-  .nav--scrolled{background:rgba(5,6,10,.92);-webkit-backdrop-filter:none;backdrop-filter:none}
-  .nav__cta{background:rgba(20,26,42,.6);-webkit-backdrop-filter:none;backdrop-filter:none}
-  .nav__links{-webkit-backdrop-filter:none;backdrop-filter:none}
-  .holo{background:linear-gradient(160deg,rgba(28,34,52,.94),rgba(14,18,30,.94));
-    -webkit-backdrop-filter:none;backdrop-filter:none}
-  .portal{background:linear-gradient(165deg,rgba(26,32,50,.94),rgba(10,12,20,.96));
-    -webkit-backdrop-filter:none;backdrop-filter:none}
-  .pillar{background:linear-gradient(160deg,rgba(26,32,50,.92),rgba(12,15,26,.94));
-    -webkit-backdrop-filter:none;backdrop-filter:none}
-}
+   "scrolls then suddenly stops" stutter. Driven by html.is-touch (set by a
+   robust JS check in <head>) rather than @media(hover:none), because some
+   in-app webviews mis-report hover. Drop the blur and use solid-ish fills
+   so the glass surfaces still read as cards. */
+html.is-touch .nav--scrolled{background:rgba(5,6,10,.92);-webkit-backdrop-filter:none;backdrop-filter:none}
+html.is-touch .nav__cta{background:rgba(20,26,42,.6);-webkit-backdrop-filter:none;backdrop-filter:none}
+html.is-touch .nav__links{-webkit-backdrop-filter:none;backdrop-filter:none}
+html.is-touch .holo{background:linear-gradient(160deg,rgba(28,34,52,.94),rgba(14,18,30,.94));
+  -webkit-backdrop-filter:none;backdrop-filter:none}
+html.is-touch .portal{background:linear-gradient(165deg,rgba(26,32,50,.94),rgba(10,12,20,.96));
+  -webkit-backdrop-filter:none;backdrop-filter:none}
+html.is-touch .pillar{background:linear-gradient(160deg,rgba(26,32,50,.92),rgba(12,15,26,.94));
+  -webkit-backdrop-filter:none;backdrop-filter:none}
+/* Drop the image colour-grade filter on touch — one less per-repaint cost. */
+html.is-touch .scene__media{filter:none}
