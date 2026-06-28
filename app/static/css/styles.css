@@ -21,9 +21,9 @@
 }
 /* Arabic accent lines — RTL, no letter-spacing (it breaks Arabic joins) */
 .ar{font-family:var(--font-ar);direction:rtl;unicode-bidi:isolate;letter-spacing:0}
-.kicker-ar{font-family:var(--font-ar);direction:rtl;color:var(--blue-bright);font-size:15px;margin-top:10px;opacity:.8;font-weight:300}
-.scene__ar{font-family:var(--font-ar);direction:rtl;color:var(--blue-bright);font-weight:300;
-  font-size:clamp(17px,1.8vw,22px);margin-top:16px;opacity:.85;line-height:1.4}
+.kicker-ar{font-family:var(--font-ar);direction:rtl;text-align:right;color:var(--pearl);font-size:15px;margin-top:10px;opacity:.82;font-weight:300}
+.scene__ar{font-family:var(--font-ar);direction:rtl;text-align:right;color:var(--pearl);font-weight:300;
+  font-size:clamp(17px,1.8vw,22px);margin-top:16px;opacity:.88;line-height:1.4}
 .scene--5 .scene__ar{text-align:center}
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -233,8 +233,8 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
 .cta:hover{box-shadow:0 26px 70px -16px rgba(61,124,255,1)}
 .finale__foot{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--pearl-dim);margin-top:8px}
 .finale__ar{font-family:var(--font-ar);direction:rtl;font-weight:300;font-size:clamp(20px,2.6vw,30px);
-  color:var(--blue-bright);margin-top:-8px}
-.finale__foot--ar{font-family:var(--font-ar);font-size:14px;letter-spacing:0;margin-top:2px;color:var(--blue-bright);opacity:.8}
+  color:var(--pearl);margin-top:-8px}
+.finale__foot--ar{font-family:var(--font-ar);font-size:14px;letter-spacing:0;margin-top:2px;color:var(--pearl);opacity:.78}
 
 /* ---------- Progress rail ---------- */
 .progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:200;background:transparent}
