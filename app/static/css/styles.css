@@ -394,6 +394,23 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
   .scene__media{max-width:620px;margin-top:6px}
 }
 
+/* ---------- Capabilities scene (home) ---------- */
+.scene--caps{align-items:flex-start}
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,58px);width:100%;
+  margin:46px 0 44px;border-top:1px solid var(--glass-line);padding-top:46px}
+.cap{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cap__no{font-family:var(--mono);font-size:11px;letter-spacing:.34em;color:var(--blue-bright);opacity:.85}
+.cap__h{font-weight:300;font-size:clamp(21px,2.3vw,29px);letter-spacing:-.01em;line-height:1.1}
+.cap__p{color:var(--pearl-dim);line-height:1.62;font-weight:300;font-size:clamp(14px,1.05vw,16px)}
+.caps__link{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);
+  font-size:13px;letter-spacing:.16em;color:var(--pearl);text-decoration:none;padding:14px 28px;
+  border:1px solid var(--glass-line);border-radius:40px;
+  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s}
+.caps__link:hover{border-color:var(--blue);background:rgba(61,124,255,.08)}
+.caps__link svg{transition:transform .3s var(--ease)}
+.caps__link:hover svg{transform:translateX(4px)}
+@media(max-width:820px){.caps{grid-template-columns:1fr;gap:32px;margin-top:38px;padding-top:38px}}
+
 /* ---------- Touch devices: kill scroll jank ----------
    backdrop-filter:blur() over the fixed neural canvas forces the browser
    to re-blur its backdrop every frame while scrolling — the classic mobile
