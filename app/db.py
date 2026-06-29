@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS leads (
     id         INTEGER PRIMARY KEY AUTOINCREMENT,
     name       TEXT NOT NULL,
     email      TEXT NOT NULL,
+    phone      TEXT,
     company    TEXT,
     interest   TEXT,
     message    TEXT NOT NULL,
@@ -32,6 +33,7 @@ CREATE TABLE IF NOT EXISTS leads (
     id         SERIAL PRIMARY KEY,
     name       TEXT NOT NULL,
     email      TEXT NOT NULL,
+    phone      TEXT,
     company    TEXT,
     interest   TEXT,
     message    TEXT NOT NULL,
@@ -77,27 +79,34 @@ def init_db(app):
             if is_pg:
                 with conn.cursor() as cur:
                     cur.execute(PG_SCHEMA)
+                    # Migrate older tables that pre-date the phone column.
+                    cur.execute("ALTER TABLE leads ADD COLUMN IF NOT EXISTS phone TEXT")
             else:
                 conn.executescript(SQLITE_SCHEMA)
+                # SQLite lacks ADD COLUMN IF NOT EXISTS — try, ignore if present.
+                try:
+                    conn.execute("ALTER TABLE leads ADD COLUMN phone TEXT")
+                except sqlite3.OperationalError:
+                    pass
             conn.commit()
         finally:
             conn.close()
     app.teardown_appcontext(close_db)
 
 
-def add_lead(name, email, company, interest, message, ip=None, user_agent=None):
+def add_lead(name, email, company, interest, message, phone=None, ip=None, user_agent=None):
     db = get_db()
-    args = (name, email, company, interest, message, ip, user_agent)
+    args = (name, email, phone, company, interest, message, ip, user_agent)
     if g.is_pg:
         with db.cursor() as cur:
             cur.execute(
-                "INSERT INTO leads (name,email,company,interest,message,ip,user_agent) "
-                "VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id", args)
+                "INSERT INTO leads (name,email,phone,company,interest,message,ip,user_agent) "
+                "VALUES (%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id", args)
             rid = cur.fetchone()["id"]
     else:
         cur = db.execute(
-            "INSERT INTO leads (name,email,company,interest,message,ip,user_agent) "
-            "VALUES (?,?,?,?,?,?,?)", args)
+            "INSERT INTO leads (name,email,phone,company,interest,message,ip,user_agent) "
+            "VALUES (?,?,?,?,?,?,?,?)", args)
         rid = cur.lastrowid
     db.commit()
     return rid
@@ -107,12 +116,12 @@ def all_leads():
     db = get_db()
     if g.is_pg:
         sql = ("SELECT id, to_char(created_at,'YYYY-MM-DD HH24:MI:SS') AS created_at, "
-               "name,email,company,interest,message,ip FROM leads ORDER BY id DESC")
+               "name,email,phone,company,interest,message,ip FROM leads ORDER BY id DESC")
         with db.cursor() as cur:
             cur.execute(sql)
             return cur.fetchall()
     return db.execute(
-        "SELECT id, created_at, name, email, company, interest, message, ip "
+        "SELECT id, created_at, name, email, phone, company, interest, message, ip "
         "FROM leads ORDER BY id DESC").fetchall()
 
 

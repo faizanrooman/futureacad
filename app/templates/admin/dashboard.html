@@ -34,7 +34,7 @@
       <div class="scroll">
         <table>
           <thead>
-            <tr><th>When</th><th>Name</th><th>Email</th><th>Company</th><th>Interest</th><th>Message</th></tr>
+            <tr><th>When</th><th>Name</th><th>Email</th><th>Phone</th><th>Company</th><th>Interest</th><th>Message</th></tr>
           </thead>
           <tbody>
             {% for l in leads %}
@@ -42,6 +42,7 @@
               <td class="when">{{ l.created_at }}</td>
               <td>{{ l.name }}</td>
               <td><a href="mailto:{{ l.email }}">{{ l.email }}</a></td>
+              <td>{% if l.phone %}<a href="tel:{{ l.phone }}">{{ l.phone }}</a>{% else %}—{% endif %}</td>
               <td>{{ l.company or '—' }}</td>
               <td><span class="tag">{{ l.interest or '—' }}</span></td>
               <td class="msg">{{ l.message }}</td>

@@ -22,6 +22,7 @@
     const data = {
       name: form.name.value.trim(),
       email: form.email.value.trim(),
+      phone: form.phone ? form.phone.value.trim() : '',
       company: form.company.value.trim(),
       interest: form.interest.value,
       message: form.message.value.trim(),

@@ -14,6 +14,10 @@
     <p>Whether it's AI in production, an enterprise platform, or a team to ship it — we'll come prepared with ideas, not a sales script.</p>
     <div class="contact__meta">
       <span>EMAIL · <a href="mailto:hello@futureacad.ae">hello@futureacad.ae</a></span>
+      {# Add the real Dubai branch number + address once confirmed:
+      <span>PHONE · <a href="tel:+9710000000000">+971 0 000 0000</a></span>
+      <span>OFFICE · Office No. XX, [Tower], Dubai, UAE</span> #}
+      <span>HOURS · Sun – Thu, 9:00 AM – 6:00 PM (GST)</span>
       <span>BASED IN · Dubai, United Arab Emirates</span>
       <span>A DEEP TECH INITIATIVE BY ROOMAN</span>
     </div>
@@ -32,18 +36,22 @@
     </div>
     <div class="field--row">
       <div class="field">
+        <label for="phone">Phone <span class="field__opt">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" />
+      </div>
+      <div class="field">
         <label for="company">Company</label>
         <input type="text" id="company" name="company" autocomplete="organization" />
       </div>
-      <div class="field">
-        <label for="interest">I'm interested in</label>
-        <select id="interest" name="interest">
-          <option value="Artificial Intelligence">Artificial Intelligence</option>
-          <option value="Enterprise Software">Enterprise Software</option>
-          <option value="Global Talent & Staffing">Global Talent &amp; Staffing</option>
-          <option value="Something else">Something else</option>
-        </select>
-      </div>
+    </div>
+    <div class="field">
+      <label for="interest">I'm interested in</label>
+      <select id="interest" name="interest">
+        <option value="AI Applications">AI Applications</option>
+        <option value="AI &amp; IT Solutions">AI &amp; IT Solutions</option>
+        <option value="IT Staffing">IT Staffing</option>
+        <option value="Something else">Something else</option>
+      </select>
     </div>
     <div class="field">
       <label for="message">Message</label>

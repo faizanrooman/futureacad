@@ -9,7 +9,7 @@ from .utils import valid_csrf, send_lead_email
 main = Blueprint("main", __name__)
 
 EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
-MAX = {"name": 120, "email": 200, "company": 160, "interest": 80, "message": 4000}
+MAX = {"name": 120, "email": 200, "phone": 40, "company": 160, "interest": 80, "message": 4000}
 
 
 @main.route("/")
@@ -51,6 +51,7 @@ def api_contact():
 
     name = (data.get("name") or "").strip()
     email = (data.get("email") or "").strip()
+    phone = (data.get("phone") or "").strip()
     company = (data.get("company") or "").strip()
     interest = (data.get("interest") or "").strip()
     message = (data.get("message") or "").strip()
@@ -63,10 +64,10 @@ def api_contact():
         if len(locals().get(field, "")) > limit:
             return jsonify(ok=False, error="One of the fields is too long."), 400
 
-    lead = {"name": name, "email": email, "company": company,
+    lead = {"name": name, "email": email, "phone": phone, "company": company,
             "interest": interest or "Unspecified", "message": message}
     db.add_lead(
-        name, email, company, interest, message,
+        name, email, company, interest, message, phone=phone,
         ip=request.headers.get("X-Forwarded-For", request.remote_addr),
         user_agent=request.headers.get("User-Agent", "")[:300],
     )

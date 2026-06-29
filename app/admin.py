@@ -65,9 +65,9 @@ def export():
     rows = db.all_leads()
     buf = io.StringIO()
     writer = csv.writer(buf)
-    writer.writerow(["id", "created_at", "name", "email", "company", "interest", "message", "ip"])
+    writer.writerow(["id", "created_at", "name", "email", "phone", "company", "interest", "message", "ip"])
     for r in rows:
-        writer.writerow([r["id"], r["created_at"], r["name"], r["email"],
+        writer.writerow([r["id"], r["created_at"], r["name"], r["email"], r["phone"],
                          r["company"], r["interest"], r["message"], r["ip"]])
     return Response(
         buf.getvalue(), mimetype="text/csv",

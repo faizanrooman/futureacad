@@ -35,6 +35,7 @@ def send_lead_email(lead):
             "New strategy-session enquiry:\n\n"
             f"Name:     {lead['name']}\n"
             f"Email:    {lead['email']}\n"
+            f"Phone:    {lead.get('phone') or '-'}\n"
             f"Company:  {lead['company'] or '-'}\n"
             f"Interest: {lead['interest']}\n\n"
             f"Message:\n{lead['message']}\n"

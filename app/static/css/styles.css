@@ -308,6 +308,7 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
 .form{display:grid;gap:20px}
 .field{display:flex;flex-direction:column;gap:9px}
 .field label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--pearl-dim);text-transform:uppercase}
+.field__opt{letter-spacing:.1em;opacity:.6;text-transform:none}
 .field input,.field select,.field textarea{width:100%;padding:15px 16px;background:rgba(160,185,255,.05);
   border:1px solid var(--glass-line);border-radius:12px;color:var(--pearl);font-family:var(--font);font-size:15px;
   transition:border-color .3s,background .3s;outline:none}
