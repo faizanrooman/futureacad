@@ -71,7 +71,8 @@
   (function () {
     const v = document.getElementById('finaleVideo');
     if (!v) return;
-    if (prefersReduced) { v.removeAttribute('autoplay'); try { v.pause(); } catch (e) {} return; }
+    v.playsInline = true; v.muted = true; // inline autoplay on iOS (set in JS, not markup)
+    if (prefersReduced) { try { v.pause(); } catch (e) {} return; }
     if (!('IntersectionObserver' in window)) { v.play().catch(() => {}); return; }
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
