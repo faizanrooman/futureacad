@@ -265,7 +265,7 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
 @media(max-width:560px){.pillars--4{grid-template-columns:1fr}}
 .pillar__meta{display:block;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--blue-bright);opacity:.9}
-.section__note{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;
+.section__note{position:relative;z-index:1;margin-top:60px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--pearl-dim)}
 /* Partner / certification wordmarks */
 .partners{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(26px,5vw,60px);
