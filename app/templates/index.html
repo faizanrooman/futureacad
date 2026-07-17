@@ -4,7 +4,6 @@
 {% block preloader %}
 <div class="preloader" id="preloader">
   <img class="preloader__logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="FutureAcad" />
-  <div class="preloader__ar ar" lang="ar">أهلاً وسهلاً</div>
   <div class="preloader__bar"><span id="preBar"></span></div>
   <div class="preloader__label">INITIALIZING INTELLIGENCE</div>
 </div>
@@ -15,7 +14,6 @@
   <section class="scene scene--1" id="scene1">
     <div class="scene1__stage">
       <div class="kicker reveal-up">THE FUTURE DOESN'T WAIT</div>
-      <div class="kicker-ar reveal-up" lang="ar">المستقبل لا ينتظر</div>
       <div class="title-stack">
         <h1 class="title-xl">
           <span class="line" data-line>Future <em>isn't</em></span>
@@ -37,7 +35,6 @@
     <div class="scene__lead">
       <div class="scene2__copy">
         <h2 class="title-lg reveal-up">A mind, not<br>a machine.</h2>
-        <p class="scene__ar reveal-up" lang="ar">عقلٌ لا آلة</p>
         <p class="lede reveal-up">Move through a living neural intelligence. Agents, language models, vision, and automation — orchestrated as one enterprise brain.</p>
       </div>
       <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-2.jpg') }}" alt="An AI capability map — strategy, machine learning, vision, automation" loading="lazy" /></div>
@@ -59,7 +56,6 @@
     <div class="scene__lead">
       <div class="scene3__copy">
         <h2 class="title-lg reveal-up">We build the<br>city beneath<br>the software.</h2>
-        <p class="scene__ar reveal-up" lang="ar">نبني البنية التحتية الرقمية</p>
         <p class="lede reveal-up">Every node becomes code. Every service becomes a tower. Roads of data, skylines of architecture — enterprise systems you can feel.</p>
       </div>
       <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-3.jpg') }}" alt="A live system architecture — cloud, data pipeline, microservices" loading="lazy" /></div>
@@ -78,7 +74,6 @@
     <div class="scene__lead">
       <div class="scene4__copy">
         <h2 class="title-lg reveal-up">Talent has<br>no borders.</h2>
-        <p class="scene__ar reveal-up" lang="ar">المواهب بلا حدود</p>
         <p class="lede reveal-up">Developers light up in India. Clients rise in the UAE. Projects ignite across Europe. One living network, hiring at the speed of ambition.</p>
         <div class="globe-legend">
           <span><i class="dot dot--dev"></i>Developers</span>
@@ -95,7 +90,6 @@
     <div class="scene__bg bg--proof"></div>
     <div class="scene__index">04 / PROOF</div>
     <h2 class="title-lg reveal-up center">Outcomes, not promises.</h2>
-    <p class="scene__ar reveal-up" lang="ar">نتائج لا وعود</p>
     <div class="portals" id="portals">
       <article class="portal" data-tilt>
         <header><span>RETAIL · UAE</span><b>+38%</b></header>
@@ -128,7 +122,6 @@
     <div class="scene__lead">
       <div class="eco__copy">
         <h2 class="title-lg reveal-up">Platforms<br>already live.</h2>
-        <p class="scene__ar reveal-up" lang="ar">منصّات تعمل الآن</p>
         <p class="lede reveal-up">Not concepts — products in production, used every day. A working ecosystem spanning enterprise software, education, and AI.</p>
       </div>
       <div class="scene__media reveal-up"><img src="{{ url_for('static', filename='img/ai-4.jpg') }}" alt="A FutureAcad engineer building and training AI models" loading="lazy" /></div>
@@ -147,7 +140,6 @@
     <div class="scene__bg bg--enterprise"></div>
     <div class="scene__index">06 / CAPABILITIES</div>
     <h2 class="title-lg reveal-up">What we<br>actually do.</h2>
-    <p class="scene__ar reveal-up" lang="ar">خدماتنا</p>
     <div class="caps">
       <article class="cap reveal-up">
         <span class="cap__no">01 — AI APPLICATIONS</span>
@@ -181,13 +173,11 @@
     <div class="finale">
       <img class="finale__logo reveal-up" src="{{ url_for('static', filename='img/logo.png') }}" alt="FutureAcad — A Deep Tech Initiative by Rooman" />
       <h2 class="title-xl center reveal-up">Let's build<br>tomorrow.</h2>
-      <p class="finale__ar ar reveal-up" lang="ar">لِنَبْنِ الغد</p>
       <a href="{{ url_for('main.contact') }}" class="cta" data-magnetic>
         <span>Schedule Strategy Session</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="finale__foot">Dubai · United Arab Emirates — The Future Doesn't Wait.</div>
-      <div class="finale__foot finale__foot--ar ar" lang="ar">من دبي، إلى العالم</div>
     </div>
   </section>
 {% endblock %}
