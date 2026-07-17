@@ -173,7 +173,11 @@
 
   <!-- SCENE 6 — The Future / Dubai -->
   <section class="scene scene--6" id="scene6">
-    <div class="skyline" id="skyline"></div>
+    <video class="finale__video" id="finaleVideo" muted loop playsinline autoplay preload="none"
+           poster="{{ url_for('static', filename='video/finale-poster.jpg') }}">
+      <source src="{{ url_for('static', filename='video/finale.mp4') }}" type="video/mp4" />
+    </video>
+    <div class="finale__scrim"></div>
     <div class="finale">
       <img class="finale__logo reveal-up" src="{{ url_for('static', filename='img/logo.png') }}" alt="FutureAcad — A Deep Tech Initiative by Rooman" />
       <h2 class="title-xl center reveal-up">Let's build<br>tomorrow.</h2>

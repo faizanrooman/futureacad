@@ -19,3 +19,6 @@ Thumbs.db
 
 # Build artefacts / reference
 app/static/js/_main_reference.js
+
+# Raw/source video (only the optimised app/static/video/* is committed)
+/watermark-removed-*.mp4
