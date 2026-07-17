@@ -31,7 +31,7 @@ class Config:
     SMTP_USER = os.environ.get("SMTP_USER")
     SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
     SMTP_FROM = os.environ.get("SMTP_FROM", "no-reply@futureacad.ae")
-    LEAD_NOTIFY = os.environ.get("LEAD_NOTIFY")  # recipient for lead notifications
+    LEAD_NOTIFY = os.environ.get("LEAD_NOTIFY", "info@futureacad.ae")  # recipient for lead notifications
 
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = "Lax"
