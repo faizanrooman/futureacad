@@ -248,6 +248,7 @@ body.nav-open .nav__toggle span:nth-child(3){transform:translateY(-6.5px) rotate
    INNER PAGES (About / Services / Work / Contact)
    ============================================================ */
 .page{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:22vh clamp(22px,5vw,56px) 12vh}
+.page--tight{padding-bottom:4vh}
 .page__kicker{font-family:var(--mono);font-size:12px;letter-spacing:.42em;color:var(--blue-bright);margin-bottom:26px}
 .page__title{font-weight:200;line-height:1.0;letter-spacing:-.03em;font-size:clamp(40px,7vw,104px);max-width:16ch}
 .page__lede{max-width:60ch;margin-top:30px;font-size:clamp(16px,1.5vw,21px);line-height:1.6;color:var(--pearl-dim);font-weight:300}
