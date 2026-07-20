@@ -1,9 +1,9 @@
 """Static content data — the live platform ecosystem."""
 
 PROJECTS = [
-    {"name": "Rooman CRM",     "host": "crm.rooman.com",        "url": "https://crm.rooman.com/",
+    {"name": "CRM",            "host": "crm.rooman.com",        "url": "https://crm.rooman.com/",
      "desc": "Customer relationship platform"},
-    {"name": "Rooman ERP",     "host": "erp.rooman.net",        "url": "https://erp.rooman.net/",
+    {"name": "ERP",            "host": "erp.rooman.net",        "url": "https://erp.rooman.net/",
      "desc": "Enterprise resource planning system"},
     {"name": "Student Portal", "host": "rooman.net",            "url": "https://rooman.net/student-login/",
      "desc": "Learning & student login"},
