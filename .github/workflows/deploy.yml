@@ -1,0 +1,27 @@
+name: Deploy to server
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Pull latest code
+        run: |
+          cd /var/www/futureacad
+          git pull origin main
+
+      - name: Install dependencies
+        run: |
+          cd /var/www/futureacad
+          source venv/bin/activate
+          pip install -r requirements.txt
+
+      - name: Restart app
+        run: |
+          pkill -f "gunicorn.*app:create_app" || true
+          cd /var/www/futureacad
+          source venv/bin/activate
+          gunicorn --bind 127.0.0.1:5000 --daemon "app:create_app()"
